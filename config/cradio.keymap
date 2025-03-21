@@ -24,7 +24,6 @@
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
@@ -34,7 +33,6 @@
 
         td: tapdance {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick_tap_ms = <0>;
@@ -48,19 +46,19 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E       &kp R                   &kp T         &kp Y      &kp U       &kp I       &kp O    &kp P
-&kp A  &kp S  &hm LALT D  &hm LGUI F              &kp G         &kp H      &hm RGUI J  &hm RALT K  &kp L    &mt ENTER SEMI
-&kp Z  &kp X  &kp C       &kp V                   &kp B         &kp N      &kp M       &kp COMMA   &kp DOT  &kp FSLH
+&kp Q  &kp W  &kp E       &kp R                   &kp T         &kp Y      &kp U       &kp I          &kp O         &td BACKSPACE P
+&kp A  &kp S  &hm LALT D  &hm LGUI F              &kp G         &kp H      &hm RGUI J  &hm RALT K     &kp L         &td ENTER SEMICOLON
+&kp Z  &kp X  &kp C       &kp V                   &kp B         &kp N      &kp M       &td SQT COMMA  &td EXCL DOT  &td BSLH FSLH
                           &mt LC(LS(LALT)) SPACE  &sk LSHIFT    &sk RCTRL  &to 1
             >;
         };
 
         left_layer {
             bindings = <
-&kp ESC    &kp AT      &td LC(LG(LS(N4))) LS(N3)  &kp DLLR          &kp PRCNT     &kp CARET           &kp LS(COMMA)         &kp LS(DOT)            &mt COLON SEMICOLON  &kp BACKSPACE
-&kp TAB    &kp EQUAL   &kp LA(RBKT)               &kp LA(LS(RBKT))  &kp SQT       &mt HOME BACKSLASH  &kp LBRC              &kp RBRC               &mt END PIPE         &kp ENTER
-&kp TILDE  &kp LA(N3)  &kp LA(LBKT)               &kp LA(LS(LBKT))  &kp DQT       &kp LBKT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RBKT             &to 3
-                                                  &to 0             &sk LSHIFT    &sk RALT            &to 2
+&kp ESC    &kp AT      &td LC(LG(LS(N4))) LS(N3)  &kp DLLR          &kp PRCNT     &kp CARET  &kp LS(COMMA)  &kp LS(DOT)  &kp SEMI  &kp BSPC
+&kp TAB    &kp EQUAL   &kp LA(RBKT)               &kp LA(LS(RBKT))  &kp SQT       &kp BSLH   &kp LBRC       &kp RBRC     &kp PIPE  &kp ENTER
+&kp TILDE  &kp LA(N3)  &kp LA(LBKT)               &kp LA(LS(LBKT))  &kp DQT       &kp LBKT   &kp LPAR       &kp RPAR     &kp RBKT  &to 3
+                                                  &to 0             &sk LSHIFT    &sk RALT   &to 2
             >;
         };
 
@@ -75,19 +73,19 @@
 
         tri_layer {
             bindings = <
-&trans               &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp NUM_5    &kp LG(LBKT)  &kp LC(LS(TAB))  &kp RC(TAB)   &kp LG(RBKT)  &trans
-&kp F1               &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp DEL      &kp LEFT      &kp DOWN         &kp UP        &kp RIGHT     &kp ENTER
-&td LG(GRAVE) GRAVE  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &trans       &mkp LCLK     &kp PG_DN        &kp K_VOL_DN  &trans        &trans
-                                                     &to 0            &trans       &sk RALT      &to 1
+&kp F2               &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp N5     &kp LG(LBKT)  &kp LC(LS(TAB))  &kp RC(TAB)   &kp LG(RBKT)  &trans
+&kp F1               &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp DEL    &kp LEFT      &kp DOWN         &kp UP        &kp RIGHT     &kp ENTER
+&td LG(GRAVE) GRAVE  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &trans     &mkp LCLK     &kp PG_DN        &kp K_VOL_DN  &trans        &trans
+                                                     &to 0            &trans     &sk RALT      &to 1
             >;
         };
 
         bt {
             bindings = <
-&trans      &trans      &trans      &trans  &bt BT_SEL 0    &trans  &trans  &trans  &trans  &trans
-&trans      &trans      &trans      &trans  &bt BT_SEL 1    &trans  &trans  &trans  &trans  &trans
-&bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
-                                    &to 0   &trans          &trans  &to 1
+&trans      &trans      &trans      &trans  &bt BT_SEL 0    &bt BT_SEL 3  &trans  &trans  &trans  &trans
+&trans      &trans      &trans      &trans  &bt BT_SEL 1    &bt BT_SEL 4  &trans  &trans  &trans  &trans
+&bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans  &bt BT_SEL 2    &trans        &trans  &trans  &trans  &trans
+                                    &to 0   &trans          &trans        &to 1
             >;
         };
     };
