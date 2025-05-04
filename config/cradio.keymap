@@ -41,6 +41,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        fn_1-0 {
+            bindings = <&to 5>;
+            key-positions = <30 33>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
