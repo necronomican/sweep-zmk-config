@@ -56,6 +56,40 @@
             bindings = <&kp TAB>;
             key-positions = <11 12 13>;
         };
+
+        bootloader_combo {
+            bindings = <&bootloader>;
+            key-positions = <0 1 2 3 4>;
+            timeout-ms = <50>;
+        };
+
+        // Left half bootloader combo - top row left side
+        bootloader_left_top {
+            bindings = <&bootloader>;
+            key-positions = <0 1 2>;
+            timeout-ms = <50>;
+        };
+
+        // Left half bootloader combo - bottom row left side  
+        bootloader_left_bottom {
+            bindings = <&bootloader>;
+            key-positions = <20 21 22>;
+            timeout-ms = <50>;
+        };
+
+        // Left half bootloader combo - left column
+        bootloader_left_column {
+            bindings = <&bootloader>;
+            key-positions = <0 10 20>;
+            timeout-ms = <50>;
+        };
+
+        // Emergency bootloader - all left thumb keys
+        bootloader_left_thumbs {
+            bindings = <&bootloader>;
+            key-positions = <32 33>;
+            timeout-ms = <50>;
+        };
     };
 
     macros {
@@ -118,7 +152,7 @@
         nav {
             bindings = <
 &wrkspcleft           &wrkspcshftrght   &altctrllft           &altctrlrgt       &altf2      &kp PAGE_UP    &kp LC(PG_UP)  &kp UP    &kp LC(PG_DN)  &kp DELETE
-&trans                &kp LCTRL         &kp LALT              &kp LGUI          &kp DELETE  &kp PAGE_DOWN  &kp LEFT       &kp DOWN  &kp RIGHT      &kp BSLH
+&bootloader           &kp LCTRL         &kp LALT              &kp LGUI          &kp DELETE  &kp PAGE_DOWN  &kp LEFT       &kp DOWN  &kp RIGHT      &kp BSLH
 &kp LS(LG(UP_ARROW))  &kp LS(LG(DOWN))  &kp LC(LG(UP_ARROW))  &kp LG(LC(DOWN))  &mo 4       &trans         &kp HOME       &kp END   &kp LC(SPACE)  &kp LC(SPACE)
                                                               &mo 2             &kp LSHFT   &trans         &trans
             >;
